@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  pocketbase:
+    image: elestio/pocketbase
+    container_name: pocketbase
+    environment:
+      PB_ENCRYPTION_SECRET: "BUBADIBAKO"
+    ports:
+      - "8081:8090"
+    volumes:
+      - ./pb_data:/pb_data
+    command: ["serve", "--http=0.0.0.0:8090"]
+
