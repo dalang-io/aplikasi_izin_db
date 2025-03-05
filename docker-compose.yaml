@@ -5,10 +5,8 @@ services:
     image: elestio/pocketbase
     container_name: pocketbase
     environment:
-      PB_ENCRYPTION_SECRET: "BUBADIBAKO"
-    ports:
-      - "8090:8090"
+      PB_ENCRYPTION_SECRET: ${PB_ENCRYPTION_SECRET}
     volumes:
       - ./pb_data:/pb_data
-    command: ["serve", "--http=0.0.0.0:8090"]
-
+    ports:
+      - "8090:8090"
